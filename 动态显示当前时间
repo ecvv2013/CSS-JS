@@ -1,0 +1,40 @@
+<head>
+    <title>eg</title>
+    <style>
+        #time {
+            color: rgb(27, 195, 247);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>现在的时间是：<span id="time"></span></p>
+    </div>
+    <script>
+        // 格式化时间
+        function timer () {
+            let dayTime = new Date();
+            let year = dayTime.getFullYear();
+            let month = dayTime.getMonth() + 1;
+                month = month < 10 ? '0' + month : month;   
+            let date = dayTime.getDate();
+                date = date < 10 ? '0' + date : date;   
+            let h = dayTime.getHours();
+                h = h < 10 ? '0' + h : h;   
+            let m = dayTime.getMinutes();
+                m = m < 10 ? '0' + m : m;   
+            let s = dayTime.getSeconds();
+                s = s < 10 ? '0' + s : s;
+            let days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            let day = days[dayTime.getDay()];
+            document.getElementById('time').innerText = year + '-' + month + '-' + date + ' ' + h + ':' + m + ':' + s + ' ' + day;
+        }
+    timer ();
+
+    // 定时器
+    setInterval(() => timer(), 1000);
+    </script>
+</body>   
+
+
