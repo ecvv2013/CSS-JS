@@ -1,0 +1,19 @@
+<head>
+    <title>九九乘法表</title>
+</head>
+<body>
+   <div id='na'></div>
+    <script>
+        let num = '';
+        for (let i = 1; i <= 9; i++) {
+          for (let u = 1; u <= i; u++) {
+            num += u + 'x' + i + '=' + u * i + '\t';
+          }
+          num += '\n';
+        }
+        console.log(num);
+        document.getElementById('na').innerText = num;
+      
+      
+      </script>
+</body>
