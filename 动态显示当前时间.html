@@ -13,7 +13,7 @@
     </div>
     <script>
         // 格式化时间
-        function timer () {
+        function getTime () {
             let dayTime = new Date();
             let year = dayTime.getFullYear();
             let month = dayTime.getMonth() + 1;
@@ -30,11 +30,9 @@
             let day = days[dayTime.getDay()];
             document.getElementById('time').innerText = year + '-' + month + '-' + date + ' ' + h + ':' + m + ':' + s + ' ' + day;
         }
-    timer ();
+    getTime ();
 
     // 定时器
-    setInterval(() => timer(), 1000);
+    setInterval(() => getTime(), 1000);
     </script>
 </body>   
-
-
