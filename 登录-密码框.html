@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <title>case</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".psw").focus(function() {
+                $(this).parent().css("border", "1px solid rgb(52, 72, 250)");
+                $(this).prev().attr("src", "https://ecvv2013.github.io/CSS-JS/img/u3.svg");
+            });
+
+            $(".psw").blur(function() {
+                $(this).parent().css("border", "1px solid rgb(205, 206, 209)");
+                $(this).prev().attr("src", "https://ecvv2013.github.io/CSS-JS/img/u2.svg");
+            });
+
+            $(".img1").click(function() {
+                if($(this).attr('src') == 'https://ecvv2013.github.io/CSS-JS/img/u137.svg') {
+                    $(this).attr("src", "https://ecvv2013.github.io/CSS-JS/img/u138.svg");
+                    $(this).prev().attr("type", "text");
+                } else {
+                    $(this).attr("src", "https://ecvv2013.github.io/CSS-JS/img/u137.svg");
+                    $(this).prev().attr("type", "password");
+                }
+            });   
+        });
+    </script>
+    <style>
+        #time {
+            float:right;
+            color: rgb(202, 32, 32);
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+       
+        .center {
+            position: absolute;
+            left: 42%;
+            margin-right: 100px;
+            top: 200px;
+            border: 1px solid rgb(205, 206, 209);
+            border-radius: 4px;
+            width: 250px;
+            height: 40px;
+        }
+
+        .psw {
+            line-height: 34px;
+            width: 185px;
+            border: 0px;
+            color:rgb(27, 27, 27);
+            padding-left: 32px;
+            padding-right: 30px;
+            margin-top: 2px;
+            outline: 0px;
+        }
+
+        .img1 {
+            position:absolute;
+            margin-top: 12px;
+            margin-left: -28px;
+            width: 22px;
+            height: 16px;
+            cursor:pointer;
+        }
+
+        .img2 {
+            position:absolute;
+            margin-top: 11px;
+            margin-left: 10px;
+            width: 14px;
+        }  
+
+        input::placeholder {
+            color: rgb(211, 209, 209);
+        }
+    </style>
+</head>
+<body>
+    <p id="time"></p>
+
+    <div class="center" style="top: 200px;">
+        <img src="https://ecvv2013.github.io/CSS-JS/img/u2.svg" alt="" class="img2">
+        <input type="password" value="" class="psw" placeholder="请输入密码" maxlength="20"> 
+        <img src="https://ecvv2013.github.io/CSS-JS/img/u137.svg" alt="" class="img1">
+    </div>
+
+    <!-- copy上一段div -->
+    <div class="center" style="top: 265px;">
+        <img src="https://ecvv2013.github.io/CSS-JS/img/u2.svg" alt="" class="img2">
+        <input type="password" value="" class="psw" placeholder="请再次输入密码" maxlength="20"> 
+        <img src="https://ecvv2013.github.io/CSS-JS/img/u137.svg" alt="" class="img1">
+    </div>
+
+    <script>
+        let timer = document.getElementById('time');
+        timer.onload = autoTime();
+        function autoTime() {
+            function getTime () {
+            let dayTime = new Date();
+            let year = dayTime.getFullYear();
+            let month = dayTime.getMonth() + 1;
+                month = month < 10 ? '0' + month : month;   
+            let date = dayTime.getDate();
+                date = date < 10 ? '0' + date : date;   
+            let h = dayTime.getHours();
+                h = h < 10 ? '0' + h : h;   
+            let m = dayTime.getMinutes();
+                m = m < 10 ? '0' + m : m;   
+            let s = dayTime.getSeconds();
+                s = s < 10 ? '0' + s : s;
+            let days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            let day = days[dayTime.getDay()];
+            let greetings ='';
+        if(h < 12) {
+            greetings = '早上好！';
+        } else if(h < 18) {
+            greetings = '下午好！';
+        } else {
+            greetings = '晚上好！';
+        }
+            document.getElementById('time').innerText = greetings + year + '-' + month + '-' + date + ' ' + h + ':' + m + ':' + s + ' ' + day;
+        }
+        getTime ();
+
+        // 定时器
+        setInterval(() => getTime(), 1000);
+        }
+    </script>
+</body>
+</html>
