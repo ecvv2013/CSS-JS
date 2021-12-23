@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简易登录传值给首页</title>
+  <style>
+    input {
+      color: rgb(41, 39, 39);
+    }
+
+    input[placeholder] {
+      color: darkgray;
+    }
+
+    fieldset {
+      width: 500px;
+    }
+
+    span {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="Untitled-5.html" id="el">
+    <fieldset>
+      <legend>登录</legend>
+      <label>用户名 <input type="text" name="userName" value="" placeholder="请输入用户名" id="inp"></label>
+      <input type="submit" value="登录"  id="sbt"> <span id="tip"></span>
+    </fieldset>
+  </form>
+  <script>
+    let sbt = document.querySelector('#sbt');
+    let inp = document.querySelector('#inp');
+    let tip = document.querySelector('#tip');
+      inp.addEventListener('focus', function() {
+        tip.innerHTML = '';
+      })
+      inp.addEventListener('blur', function() {
+        return inp.value;
+      })
+      sbt.addEventListener('click', function(event) {
+      if (inp.value == '') {
+        tip.innerHTML = '用户名不能为空';
+        event.preventDefault();
+    } else {
+      return true;
+    }
+    })
+  </script>
+</body>
+
+</html>
