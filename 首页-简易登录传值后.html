@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="el1">{{userName}},欢迎登录!</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div
+        <input type="text" v-model.lazy="ipt">
+        <p><span id="un"></span>您好，欢迎登录！</p>
+    </div>
+    <script>
+        let userName = location.search.split('=').slice(-1).toString();
+        let un = document.querySelector('#un');
+            un.innerHTML = userName;
+        console.log(userName);
+      
+        new Vue({
+            el: '#el1',
+            data: {
+                userName: `${userName}`
+            }
+        });
+    </script>
+</body>
+
+</html>
