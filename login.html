@@ -41,14 +41,16 @@
     </script>
     <style>
         body {
-            background: rgb(241, 236, 236);
+            background: url(https://ecvv2013.github.io/CSS-JS/img/bg.jpg);
+            opacity: 0.85;
         }
 
         #time {
             float: right;
-            color: rgb(202, 32, 32);
-            margin-right: 20px;
-            margin-top: 5px;
+            color: rgb(243, 181, 11);
+            margin-right: 40px;
+            margin-top: 15px;
+            font-size: 20px;
         }
 
         .center {
@@ -58,7 +60,7 @@
             transform: translate(-50%, -100%);
             border: 1px solid rgb(205, 206, 209);
             border-radius: 4px;
-            margin-top: 150px;
+            margin-top: 180px;
             background-color: rgb(255, 255, 255);
             padding-bottom: 15px;
             height: 360px;
@@ -72,8 +74,8 @@
 
         legend {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-            color: rgb(158, 177, 238);
+            font-size: 24px;
+            color: rgb(243, 181, 11);
             cursor: move;
         }
 
@@ -157,6 +159,8 @@
 
         #sbt {
             cursor: pointer;
+            font-size: 18px;
+            color: blanchedalmond;
         }
     </style>
 </head>
@@ -271,20 +275,6 @@
                 return true;
             }
         });
-
-        // let drag = document.querySelector('legend');
-        // let dragDiv = document.getElementById('.center');
-        // dragDiv.addEventListener('mousedown', function(e) {
-        //     let x = dragDiv.offsetLeft + e.pageX;
-        //     let y = dragDiv.offsetTop + e.pageY;
-        //     console.log(x, y);
-        //     document.addEventListener('mousemove', move);
-        //     function move(e) {
-        //         dragDiv.style.left = x +'px';
-        //         dragDiv.style.top = y +'px';
-        //     }
-        //     document.removeEventListener('mouseup', move);
-        // })
 
         let drag = document.querySelector('legend');
         let dragDiv = document.getElementById('#centers');
