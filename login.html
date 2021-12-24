@@ -279,14 +279,15 @@
         let drag = document.querySelector('legend');
         let dragDiv = document.getElementById('centers');
         drag.addEventListener('mousedown', function (e) {
-            let x = e.pageX - drag.offsetLeft;
-            let y = e.pageY - drag.offsetTop;
-            console.log(x, y);
+            let x = e.pageX - dragDiv.offsetLeft;
+            let y = e.pageY - dragDiv.offsetTop;
+            let h = (dragDiv.offsetHeight - 17) / 2;
+            // console.log(x, y, h);
             document.addEventListener('mousemove', move);
 
             function move(e) {
                 dragDiv.style.left = (e.pageX - x) + "px";
-                dragDiv.style.top = (e.pageY - y) + "px";
+                dragDiv.style.top = (e.pageY + h) + "px";
             }
 
             document.addEventListener('mouseup', function() {
